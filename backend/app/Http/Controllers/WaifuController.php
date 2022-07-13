@@ -2,8 +2,9 @@
 
 namespace App\Http\Controllers;
 
-use Illuminate\Http\Request;
 use \App\Models\Waifu;
+use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Validator;
 
 class WaifuController extends Controller
 {
@@ -36,7 +37,24 @@ class WaifuController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $validator = Validator::make($request->all(), [
+            'name' => 'required|unique:waifus|max:255',
+            'slug' => 'required|unique:waifus|max:255',
+            'description' => 'required',
+            'image' => 'required|max:255'
+        ]);
+
+        if($validator->fails()){
+            return response()->json($validator->errors());
+        }
+        
+        try {
+            Waifu::create($validator->validated());
+        }catch(\Throwable $e){
+            return response()->json(['error' => 'Failed to add data!']);
+        }
+
+        return response()->json(['success' => 'Waifu has been created!']);
     }
 
     /**
@@ -45,9 +63,9 @@ class WaifuController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function show($id)
+    public function show(Waifu $waifu)
     {
-        //
+        return response()->json($waifu);
     }
 
     /**
