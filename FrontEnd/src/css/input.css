@@ -4,10 +4,11 @@
 
 @layer base {
   @font-face {
-    font-family: "helvetica";
-    src: url("./fonts/Helvetica.ttf");
-
-    font-family: "montserrat";
-    src: url("./fonts/montserrat.otf");
+    font-family: "Helvetica";
+    src: url("/fonts/helvetica.ttf");
+  }
+  @font-face {
+    font-family: "Montserrat";
+    src: url("/fonts/montserrat.otf");
   }
 }

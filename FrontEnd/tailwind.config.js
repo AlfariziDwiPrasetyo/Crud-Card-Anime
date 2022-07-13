@@ -4,8 +4,8 @@ module.exports = {
   theme: {
     extend: {
       fontFamily: {
-        montserrat: ["Montserrat"],
-        helvetica: ["Helvetica"],
+        montserrat: ["Montserrat", "sans-seric"],
+        helvetica: ["Helvetica", "sans-seric"],
       },
     },
   },
