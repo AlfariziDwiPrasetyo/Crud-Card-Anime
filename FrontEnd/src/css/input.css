@@ -2,12 +2,12 @@
 @tailwind components;
 @tailwind utilities;
 
-@layer base{
+@layer base {
   @font-face {
-      font-family: "helvetica";
-      src: url("./fonts/Helvetica.ttf");
+    font-family: "helvetica";
+    src: url("./fonts/Helvetica.ttf");
 
-      font-family: "montserrat";
-      src : url("./fonts/montserrat.otf")
-    }
+    font-family: "montserrat";
+    src: url("./fonts/montserrat.otf");
+  }
 }
