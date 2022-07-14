@@ -4,7 +4,9 @@ module.exports = {
   theme: {
     extend: {
       fontFamily:{
-        montserrat:["Montserrat"]
+        'montserrat' : ['Montserrat'],
+        'press-start': ['"Press Start 2P"', 'cursive']
+        
       }
     },
   },
